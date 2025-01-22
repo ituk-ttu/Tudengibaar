@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drink Prices</title>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://kit.fontawesome.com/70a8bbd6ce.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/prices.css">
+</head>
+<body>
+
+<header>
+    <img src="images/logos/logo.png" alt="Logo">
+</header>
+
+<div class="container">
+
+    <aside class="drink-list">
+        <h2>Cocktails</h2>
+        <table id="cocktail-list">
+            <tbody>
+            </tbody>
+        </table>
+    </aside>
+    <aside class="drink-list">
+        <h2>Shots</h2>
+        <table id="shot-list">
+            <tbody>
+            </tbody>
+        </table>
+        <h2>Beverages</h2>
+        <table id="beverage-list">
+            <tbody>
+            </tbody>
+        </table>
+    </aside>
+    <main id="chart-container" class="chart-container">
+        <div id="chart"></div>
+    </main>
+
+
+
+</div>
+
+<script>
+    var seriesData = {{ seriesDataJson | raw }};
+</script>
+<footer>
+    {% for sponsor in 1..7 %}
+        <img src="images/sponsors/{{ sponsor }}.png" style="width: 300px; height: auto; margin: 30px;">
+    {% endfor %}
+</footer>
+
+<script src="js/prices.js"></script>
+</body>
+</html>

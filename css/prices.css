@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Body and General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #120e21;
+    color: #EDEDED;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position:fixed;
+    height: 80px; /* Reduced header height */
+    box-sizing: border-box;
+    top: 10px;
+
+}
+
+header img {
+    max-width: 500px; /* Reduced logo size */
+    height: auto;
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90vw; /* Adjust width to fit smaller screens */
+    max-width: 1600px; /* Reduced max width */
+    margin-top: 120px; /* Adjusted for smaller header */
+    padding: 15px; /* Reduced padding */
+    background-color: #241A39;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Drink List Styles */
+.drink-list {
+    flex: 1;
+    padding: 10px; /* Reduced padding */
+    background-color: #1D1330;
+    border-radius: 12px;
+    border-right: 1px solid #6E6AC5;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    max-height: calc(100vh - 140px); /* Adjusted for smaller header */
+}
+
+/* Individual Drink Item */
+.drink-item {
+    color: #D3CCE3;
+    border-left: 3px solid transparent;
+    padding: 8px; /* Reduced padding */
+    font-size: 12px; /* Reduced font size */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #251C3C;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-left-color 0.3s, transform 0.2s;
+    margin-bottom: 12px; /* Reduced margin */
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.drink-item.active {
+    background-color: #392D4F;
+    color: #FFFFFF;
+    border-left: 5px solid #FF5733;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transform: translateX(5px); /* Reduced translation */
+}
+
+/* Price Change Styling */
+.price-change {
+    font-size: 14px; /* Reduced font size */
+    border: 2px solid #8D8D8D;
+    color: #D3D3D3;
+    padding: 4px 8px; /* Reduced padding */
+    border-radius: 8px;
+    background-color: rgba(200, 200, 200, 0.1);
+    min-width: 20px; /* Reduced min width */
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+}
+
+.price-change.red {
+    border-color: #FF5555;
+    color: #FF8888;
+    background-color: rgba(255, 85, 85, 0.15);
+}
+
+.price-change.green {
+    border-color: #66BB6A;
+    color: #A5D6A7;
+    background-color: rgba(102, 187, 106, 0.15);
+}
+
+/* Price Cell Styling */
+.price_cell {
+    min-width: 60px; /* Reduced min width */
+    font-size: 14px; /* Reduced font size */
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Chart Container */
+.chart-container {
+    flex: 2;
+    padding: 10px; /* Further reduced padding */
+    background-color: #241A39;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Reduced shadow intensity */
+    max-height: 700px; /* Further reduced height for smaller graph */
+    overflow: hidden; /* Reduced height for smaller graph */ /* Adjusted for smaller header */
+    overflow: hidden;
+}
+
+#chart {
+    width: 100%;
+    height: 500px; /* Match further reduced container height */ /* Match reduced container height */
+}
+
+/* Drink Name and Ingredients Styling */
+.name-cell {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.drink-name {
+    font-weight: bold;
+    font-size: 14px; /* Reduced font size */
+}
+
+.soldout {
+    background: linear-gradient(45deg, #7c7c7c, #545454);
+    color: #ffffff !important;
+    border: none;
+    border-radius: 8px;
+    cursor: not-allowed;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    opacity: 0.8;
+    padding: 6px 12px; /* Reduced padding */
+    text-align: center;
+}
+
+/* Table Styles */
+tr {
+    border-bottom: 1px solid #444;
+}
+
+table {
+    width: 100%;
+    margin-top: 8px; /* Reduced margin */
+    border-collapse: collapse;
+}
+
+table {
+    width: 100%;
+    margin-top: 8px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 6px;
+    text-align: left;
+    color: #E0E0E0;
+    width: 130px; /* Fixed width for each column */
+    word-wrap: break-word; /* Prevent text from overflowing */
+}
+
+th {
+    font-weight: 600;
+    color: #E8E8E8;
+}
+
+h2 {
+    font-size: 20px; /* Reduced font size */
+    text-transform: uppercase;
+    margin-left: 10px;
+}
+
+/* Sponsors Section */
+footer {
+    width: 65%;
+    padding: 10px 0; /* Padding around sponsors */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer img {
+    max-height: 100px; /* Restrict height for smaller images */
+    width: auto;
+    margin: 5px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+footer img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .drink-list, .chart-container {
+        width: 100%;
+        max-height: none; /* Allow full height on smaller screens */
+    }
+
+}

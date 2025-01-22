@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bartender Interface</title>
+    <link rel="stylesheet" href="css/bartender.css">
+</head>
+<body>
+
+<header>
+    <h1>Bartender Interface</h1>
+    <nav>
+        <a href="prices.php" class="prices-link">Prices</a>
+        <a href="logout.php" class="logout-button">Logout</a>
+    </nav>
+</header>
+
+<div id="drink-list">
+    <div id="total-price-up">Total: €0.00</div>
+    <form id="drink-selection-form" method="POST" action="">
+        <div class="drink-buttons">
+        </div>
+        <input type="hidden" id="drink_ids" name="drink_ids" value=""> <!-- Hidden input field -->
+        <button type="submit" id="purchase-button" onclick="confirmPurchase(); return false;">Confirm Purchase</button>
+    </form>
+</div>
+
+<!-- Cart Section -->
+<div id="cart">
+    <h2>Cart</h2>
+    <ul id="cart-items"></ul>
+    <div id="total-price">Total: €0.00</div>
+</div>
+
+<script src="js/bartender.js"></script>
+
+</body>
+</html>

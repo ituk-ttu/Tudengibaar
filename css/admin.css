@@ -1,0 +1,19 @@
+form {
+    margin-top: 100px;
+}
+
+button {
+    padding: 10px;
+    margin: 10px;
+    background-color: #00ff96;
+    color: #0a0303;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #00af66;
+    color: #0a0303;
+    border: none;
+    cursor: pointer;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<h1>Admin Panel: Crash Drink Price</h1>
+
+<form id="crashPriceForm">
+    <label for="drink">Select Drink:</label>
+    <select name="id" id="drink" required>
+        {% for drink in drinks %}
+            <option value="{{ drink.id }}">{{ drink.name }}</option>
+        {% endfor %}
+    </select>
+
+    <label for="crashed_price">Crashed Price:</label>
+    <input type="number" name="crashed_price" id="crashed_price" step="0.01" required>
+
+    <label for="duration">Duration (minutes):</label>
+    <input type="number" name="duration" id="duration" required>
+
+    <button type="submit">Apply Crash</button>
+</form>
+<form id="resetPrices">
+    <label for="reset">Reset Prices:</label>
+    <button type="submit">Reset Prices</button>
+</form>
+<form id="soldOut">
+    <label for="drink">Select Drink:</label>
+    <select name="id" id="drink" required>
+        {% for drink in drinks %}
+            <option value="{{ drink.id }}">{{ drink.name }}</option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">Apply Sold Out</button>
+</form>
+
+<div id="response"></div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+/* Global styles for a sleek, dark-themed terminal */
+body {
+    background-color: #121212; /* Dark base */
+    background-image: linear-gradient(135deg, #1a1a1a 40%, #232323); /* Subtle gradient */
+    color: #e6e6e6; /* Light text for readability */
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    color: #ffffff;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+header {
+    display: flex;
+    justify-content: space-between; /* Space out the title and navigation links */
+    align-items: center;
+    padding: 20px;
+    background-color: #1f1f1f; /* Match the page's container background */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border for definition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add subtle depth */
+}
+
+/* Header title */
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #ffffff; /* Bright white for contrast */
+}
+
+/* Navigation links container */
+header nav {
+    display: flex;
+    gap: 15px; /* Space between the links */
+}
+
+/* Logout and Prices button styles */
+header nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: linear-gradient(160deg, #292929 60%, #4caf50); /* Gradient for buttons */
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+header nav a:hover {
+    background: linear-gradient(160deg, #3d3d3d 60%, #66bb6a); /* Brighter hover state */
+    transform: translateY(-3px); /* Slight lift effect */
+}
+
+header nav a:active {
+    transform: scale(0.96); /* Press-down effect */
+}
+
+/* Specific Logout button color */
+header nav .logout-button {
+    background: linear-gradient(160deg, #292929 60%, #ff5252); /* Red gradient for logout */
+}
+
+header nav .logout-button:hover {
+    background: linear-gradient(160deg, #3d3d3d 60%, #ff867f); /* Brighter red on hover */
+}
+
+/* Containers for drink list and cart */
+#drink-list, #cart {
+    background-color: #1f1f1f; /* Slight contrast to background */
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* More defined shadow for depth */
+    margin: 20px auto;
+    max-width: 600px;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Border for better definition */
+}
+
+/* Drink buttons grid */
+.drink-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px; /* Increased spacing for visual balance */
+    margin-top: 20px;
+}
+
+/* Drink button styling */
+.drink-button {
+    position: relative;
+    background-image: linear-gradient(160deg, #292929 60%, #616161);
+    border: none;
+    border-radius: 12px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    height: 80px;
+    width: 100%; /* Adjusted for better responsiveness */
+    text-transform: uppercase;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+    overflow: hidden;
+}
+
+.drink-button:hover {
+    transform: translateY(-3px); /* Hover effect: Lift button */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+    background-image: linear-gradient(160deg, #3d3d3d 60%, #757575);
+}
+
+.drink-button:active {
+    transform: scale(0.96); /* Button press effect */
+}
+
+/* Specific color variations */
+.drink-button.red {
+    background-image: linear-gradient(160deg, #292929 60%, #ff5252);
+}
+
+.drink-button.red:hover {
+    background-image: linear-gradient(160deg, #3d3d3d 60%, #ff867f);
+}
+
+.drink-button.green {
+    background-image: linear-gradient(160deg, #292929 60%, #4caf50);
+}
+
+.drink-button.green:hover {
+    background-image: linear-gradient(160deg, #3d3d3d 60%, #66bb6a); /* Brighter gradient */
+
+}
+
+/* Drink information within buttons */
+.drink-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.drink-name {
+    font-size: 1.2em;
+    margin: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.drink-price {
+    font-size: 0.9em;
+    margin-top: 5px;
+    color: #ffffff;
+}
+
+/* Drink difference (e.g., stock information) */
+.drink-difference {
+    position: absolute;
+    bottom: 1px;
+    right: 10px;
+    font-size: 0.85em;
+    color: #ffffff;
+}
+
+/* Cart section */
+#cart-items {
+    list-style: none;
+    padding: 0;
+    color: #ffffff;
+}
+
+#cart-items li {
+    padding: 8px 0;
+    color: #f5f5f7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#total-price, #total-price-up {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: right;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+/* Remove button */
+.remove-button {
+    background: #ff5252;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.remove-button::before,
+.remove-button::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 15px;
+    background: #fff;
+}
+
+.remove-button::before {
+    transform: rotate(45deg);
+}
+
+.remove-button::after {
+    transform: rotate(-45deg);
+}
+
+/* Purchase button */
+button#purchase-button {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 12px;
+    background-color: #4caf50; /* Vibrant green */
+    color: #ffffff;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button#purchase-button:hover {
+    background-color: #388e3c;
+    transform: translateY(-2px); /* Slight lift on hover */
+    cursor: pointer;
+}
+
+button#purchase-button:active {
+    transform: scale(0.98); /* Press-down effect */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 991px) {
+    .drink-button {
+        font-size: 14px;
+        height: 70px;
+    }
+
+    .remove-button {
+        width: 36px;
+        height: 36px;
+    }
+}

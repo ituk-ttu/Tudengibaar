@@ -1,0 +1,40 @@
+{
+    "require": {
+        "ext-pdo": "*",
+        "symfony/flex": "^2.4",
+        "symfony/symfony": "^6.0",
+        "twig/twig": "^3.0 || ^2.0",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "symfony/debug-bundle": "*",
+        "symfony/maker-bundle": "^1.0",
+        "symfony/monolog-bundle": "^3.0",
+        "symfony/stopwatch": "*",
+        "symfony/web-profiler-bundle": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "vendor"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
+        ],
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "symfony/flex": true
+        }
+    }
+}

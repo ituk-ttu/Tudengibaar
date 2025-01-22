@@ -1,0 +1,34 @@
+name: Site production build pipeline
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3 
+      
+    - name: Set up PHP with Composer
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.3' # Specify the PHP version you need
+        tools: composer # Install Composer
+
+    - name: Install Composer Dependencies
+      run: composer install --no-progress --no-suggest --prefer-dist
+
+    - name: Install dev SSH Key
+      uses: shimataro/ssh-key-action@v2
+      with:
+        key: ${{ secrets.DEV_RSA }}
+        known_hosts: unnecessary
+
+    - name: Adding Known Hosts
+      run: ssh-keyscan -H ituk.ee >> ~/.ssh/known_hosts
+        
+    - name: Deploy to dev
+      run: rsync -chavzP ./* dev@ituk.ee:/var/sites/dev/tudengibaar
